@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Comparison</title>
+</head>
+<body>
+    <h1>Text Comparison</h1>
+    <form action="/compare" method="post">
+        <label for="text1">Text 1:</label>
+        <input type="text" id="text1" name="text1"><br><br>
+
+        <label for="text2">Text 2:</label>
+        <input type="text" id="text2" name="text2"><br><br>
+
+        <input type="submit" value="Compare">
+    </form>
+    <div id="result">
+        {% if similarity_score is defined %}
+            Similarity score: {{ similarity_score }}
+        {% endif %}
+    </div>
+</body>
+</html>
